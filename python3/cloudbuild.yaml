@@ -1,0 +1,16 @@
+---
+steps:
+
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'Docker build for Python 3.9 (latest)'
+    args: [
+      'build', '.',
+      '--tag=gcr.io/$PROJECT_ID/python:3.9',
+      '--tag=gcr.io/$PROJECT_ID/python:latest'
+    ]
+
+images: [
+  'gcr.io/$PROJECT_ID/python:3.9',
+  'gcr.io/$PROJECT_ID/python:latest'
+]
+tags: ['cloud-builders-community']
